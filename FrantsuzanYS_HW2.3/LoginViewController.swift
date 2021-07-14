@@ -15,39 +15,44 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        UserNameTextField.delegate = self
-        //PasswordTextField.delegate = self
-    }
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let welcomeVC = segue.destination as? WelcomeViewController else {return}
-     
-       welcomeVC.userName = UserNameTextField.text
-
+        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil
+                , queue: nil) { (nc) in
+                    self.view.frame.origin.y = -100
+                }
         
+        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil
+                , queue: nil) { (nc) in
+                    self.view.frame.origin.y = 0
+                }
     }
     
     @IBAction func RememberLoginToUser(_ sender: Any) {
-        let title = "Oops!"
-        let message = "Your password is Password 😉"
-        
-        showDetails(title: title, message: message)
-    }
-    
-    @IBAction func RememberPasswordToUser(_ sender: Any) {
         let title = "Oops!"
         let message = "Your name is User 😉"
         
         showDetails(title: title, message: message)
     }
     
+    @IBAction func RememberPasswordToUser(_ sender: Any) {
+        let title = "Oops!"
+        let message = "Your password is Password 😉"
+        
+        showDetails(title: title, message: message)
+    }
+    
    @IBAction func LogIn() {
         if UserNameTextField.text != "User" || PasswordTextField.text != "Password" {
-        
             let title = "Invalid login or password"
             let message = "Please, enter correct login and password"
             
             showDetails(title: title, message: message)
+            
+            PasswordTextField.text = ""
+        } else {
+        let welcomeVC = storyboard?.instantiateViewController(identifier: "WelcomeViewController") as! WelcomeViewController
+                
+            welcomeVC.userName = UserNameTextField.text
+            self.present(welcomeVC, animated: true)
         }
     }
     
@@ -57,17 +62,13 @@ class LoginViewController: UIViewController {
         UserNameTextField.text = ""
         PasswordTextField.text = ""
     }
-    
-    @IBAction func tapToScreen(_ sender: Any) {
-    PasswordTextField.resignFirstResponder()
-   }
-    
   
-    //override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        //super .touchesBegan(touches, with: event)
-        
-        //PasswordTextField.resignFirstResponder()
-    //}
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super .touchesBegan(touches, with: event)
+
+        UserNameTextField.resignFirstResponder()
+        PasswordTextField.resignFirstResponder()
+    }
 
 }
 
@@ -75,8 +76,12 @@ extension LoginViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
        
-        PasswordTextField.becomeFirstResponder()
-        
+        if textField == PasswordTextField {
+            LogIn()
+        } else {
+            PasswordTextField.becomeFirstResponder()
+        }
+
         return true
     }
     
