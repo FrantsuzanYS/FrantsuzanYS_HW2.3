@@ -22,6 +22,7 @@
                                 <state key="normal" title="Log In"/>
                                 <connections>
                                     <action selector="LogIn" destination="BYZ-38-t0r" eventType="touchUpInside" id="uEP-b3-ZkV"/>
+                                    <segue destination="e2I-tN-YTf" kind="presentation" identifier="showWelcomeVC" modalPresentationStyle="fullScreen" id="3Ud-ht-iTY"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="hpJ-mj-OY7" userLabel="Texts Stack View">
@@ -63,15 +64,15 @@
                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                         <state key="normal" title="Forgot User Name?"/>
                                         <connections>
-                                            <action selector="RememberLoginToUser:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lZ3-Vr-kSU"/>
+                                            <action selector="RememberDataToUser:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lZ3-Vr-kSU"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rhZ-Kv-Bdn">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rhZ-Kv-Bdn">
                                         <rect key="frame" x="198" y="0.0" width="168" height="41"/>
                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                         <state key="normal" title="Forgot Password?"/>
                                         <connections>
-                                            <action selector="RememberPasswordToUser:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0ED-tt-u5K"/>
+                                            <action selector="RememberDataToUser:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BbE-42-DA0"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -97,8 +98,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="u2S-3Q-c9R"/>
                     <connections>
-                        <outlet property="PasswordTextField" destination="rOv-Ac-Ja1" id="txt-T2-TWj"/>
-                        <outlet property="UserNameTextField" destination="qHV-TD-2ge" id="LVT-5Y-ID6"/>
+                        <outlet property="passwordTextField" destination="rOv-Ac-Ja1" id="txt-T2-TWj"/>
+                        <outlet property="userNameTextField" destination="qHV-TD-2ge" id="LVT-5Y-ID6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -123,8 +124,7 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <state key="normal" title="Log Out"/>
                                 <connections>
-                                    <action selector="LogOutAction" destination="e2I-tN-YTf" eventType="touchUpInside" id="xlf-Jl-Hm0"/>
-                                    <segue destination="70D-1r-3zi" kind="unwind" unwindAction="unwindFor:" id="09u-BF-fop"/>
+                                    <segue destination="70D-1r-3zi" kind="unwind" unwindAction="unwindFor:" id="Nqy-X0-o6j"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello, Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fg8-p2-cfX">
