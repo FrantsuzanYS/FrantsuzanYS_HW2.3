@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D4A7DED526A4BC46008C1B34 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A7DED426A4BC46008C1B34 /* UserInfo.swift */; };
+		D4A7DED926A4CFAE008C1B34 /* PersonalInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A7DED826A4CFAE008C1B34 /* PersonalInfoVC.swift */; };
 		D4E0D331269DF4B0000F7A77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E0D330269DF4B0000F7A77 /* AppDelegate.swift */; };
 		D4E0D333269DF4B0000F7A77 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E0D332269DF4B0000F7A77 /* SceneDelegate.swift */; };
 		D4E0D335269DF4B0000F7A77 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E0D334269DF4B0000F7A77 /* LoginViewController.swift */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D4A7DED426A4BC46008C1B34 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		D4A7DED826A4CFAE008C1B34 /* PersonalInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInfoVC.swift; sourceTree = "<group>"; };
 		D4E0D32D269DF4B0000F7A77 /* FrantsuzanYS_HW2.3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FrantsuzanYS_HW2.3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4E0D330269DF4B0000F7A77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D4E0D332269DF4B0000F7A77 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +43,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D44C257126A21F0100099683 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D4E0D344269E29EA000F7A77 /* WelcomeViewController.swift */,
+				D4E0D334269DF4B0000F7A77 /* LoginViewController.swift */,
+				D4A7DED826A4CFAE008C1B34 /* PersonalInfoVC.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		D44C257226A21F3500099683 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D4A7DED426A4BC46008C1B34 /* UserInfo.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D44C257326A21F5E00099683 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				D4E0D336269DF4B0000F7A77 /* Main.storyboard */,
+				D4E0D33B269DF4B1000F7A77 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		D44C257426A21F9100099683 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D4E0D339269DF4B1000F7A77 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D44C257526A21FC600099683 /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				D4E0D330269DF4B0000F7A77 /* AppDelegate.swift */,
+				D4E0D332269DF4B0000F7A77 /* SceneDelegate.swift */,
+				D4E0D33E269DF4B1000F7A77 /* Info.plist */,
+			);
+			path = SupportFiles;
+			sourceTree = "<group>";
+		};
 		D4E0D324269DF4B0000F7A77 = {
 			isa = PBXGroup;
 			children = (
@@ -58,14 +107,11 @@
 		D4E0D32F269DF4B0000F7A77 /* FrantsuzanYS_HW2.3 */ = {
 			isa = PBXGroup;
 			children = (
-				D4E0D330269DF4B0000F7A77 /* AppDelegate.swift */,
-				D4E0D332269DF4B0000F7A77 /* SceneDelegate.swift */,
-				D4E0D334269DF4B0000F7A77 /* LoginViewController.swift */,
-				D4E0D336269DF4B0000F7A77 /* Main.storyboard */,
-				D4E0D344269E29EA000F7A77 /* WelcomeViewController.swift */,
-				D4E0D339269DF4B1000F7A77 /* Assets.xcassets */,
-				D4E0D33B269DF4B1000F7A77 /* LaunchScreen.storyboard */,
-				D4E0D33E269DF4B1000F7A77 /* Info.plist */,
+				D44C257226A21F3500099683 /* Models */,
+				D44C257126A21F0100099683 /* ViewControllers */,
+				D44C257326A21F5E00099683 /* Storyboards */,
+				D44C257526A21FC600099683 /* SupportFiles */,
+				D44C257426A21F9100099683 /* Resources */,
 			);
 			path = FrantsuzanYS_HW2.3;
 			sourceTree = "<group>";
@@ -140,6 +186,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4A7DED926A4CFAE008C1B34 /* PersonalInfoVC.swift in Sources */,
+				D4A7DED526A4BC46008C1B34 /* UserInfo.swift in Sources */,
 				D4E0D335269DF4B0000F7A77 /* LoginViewController.swift in Sources */,
 				D4E0D345269E29EA000F7A77 /* WelcomeViewController.swift in Sources */,
 				D4E0D331269DF4B0000F7A77 /* AppDelegate.swift in Sources */,
@@ -291,7 +339,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = FrantsuzanYS_HW2.3/Info.plist;
+				INFOPLIST_FILE = FrantsuzanYS_HW2.3/SupportFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -309,7 +357,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = FrantsuzanYS_HW2.3/Info.plist;
+				INFOPLIST_FILE = FrantsuzanYS_HW2.3/SupportFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

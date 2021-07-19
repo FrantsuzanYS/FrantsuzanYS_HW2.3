@@ -18,5 +18,4 @@ class WelcomeViewController: UIViewController {
         
         HelloLabel.text = "Hello, \(userName)"
     }
-    
 }
